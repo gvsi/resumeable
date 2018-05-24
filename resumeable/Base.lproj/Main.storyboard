@@ -144,7 +144,7 @@
                                                 </prototypes>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Experience" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9P-6f-mz0">
-                                                <rect key="frame" x="8" y="517.5" width="85" height="20.5"/>
+                                                <rect key="frame" x="20" y="517.5" width="85" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -160,11 +160,14 @@
                                             <constraint firstItem="042-3L-acx" firstAttribute="leading" secondItem="cFJ-eh-2Vu" secondAttribute="leading" constant="20" symbolic="YES" id="Eof-mM-D45"/>
                                             <constraint firstItem="WFK-q1-RnD" firstAttribute="leading" secondItem="cFJ-eh-2Vu" secondAttribute="leading" constant="28" id="Fpz-tM-taJ"/>
                                             <constraint firstItem="Xeo-Kc-pDH" firstAttribute="top" secondItem="WFK-q1-RnD" secondAttribute="bottom" constant="8" symbolic="YES" id="H7d-KM-s6s"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="042-3L-acx" secondAttribute="trailing" constant="20" symbolic="YES" id="I2r-ZX-eoU"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="n9P-6f-mz0" secondAttribute="trailing" constant="20" symbolic="YES" id="KgP-Bk-5ru"/>
                                             <constraint firstItem="Xeo-Kc-pDH" firstAttribute="leading" secondItem="cFJ-eh-2Vu" secondAttribute="leading" constant="20" symbolic="YES" id="YFa-MB-2tW"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xeo-Kc-pDH" secondAttribute="trailing" constant="20" symbolic="YES" id="bBB-x1-UiI"/>
                                             <constraint firstItem="042-3L-acx" firstAttribute="top" secondItem="NBj-Wp-jmP" secondAttribute="bottom" constant="7.5" id="e8K-nF-aMe"/>
                                             <constraint firstItem="kRM-vA-vGl" firstAttribute="top" secondItem="Xeo-Kc-pDH" secondAttribute="bottom" constant="8" symbolic="YES" id="eTF-wA-7nc"/>
                                             <constraint firstItem="kRM-vA-vGl" firstAttribute="leading" secondItem="cFJ-eh-2Vu" secondAttribute="leading" id="o8m-ah-4UD"/>
-                                            <constraint firstItem="n9P-6f-mz0" firstAttribute="leading" secondItem="cFJ-eh-2Vu" secondAttribute="leading" constant="8" id="qFx-dh-17r"/>
+                                            <constraint firstItem="n9P-6f-mz0" firstAttribute="leading" secondItem="cFJ-eh-2Vu" secondAttribute="leading" constant="20" symbolic="YES" id="qFx-dh-17r"/>
                                             <constraint firstItem="WFK-q1-RnD" firstAttribute="top" secondItem="042-3L-acx" secondAttribute="bottom" constant="8" symbolic="YES" id="sWr-Xg-xQZ"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1250" id="y5B-w8-JwV"/>
                                         </constraints>
