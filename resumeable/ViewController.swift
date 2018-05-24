@@ -51,8 +51,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = educationTableView.dequeueReusableCell(withIdentifier: "educationItemCell") as! EducationItemTableViewCell
-        
-        cell.schoolNameLabel.text = profile.educationItems[indexPath.row].schoolName
+        let item = profile.educationItems[indexPath.row]
+        cell.schoolNameLabel.text = item.schoolName
+        cell.degreeLabel.text = "\(item.degree), \(item.major)"
+        cell.datesLabel.text = "\(item.startDate) - \(item.endDate)"
         return cell
     }
 }
