@@ -19,6 +19,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var educationTableView: UITableView!
     @IBOutlet weak var educationTableViewHeightConstraint: NSLayoutConstraint!
     
+    @IBAction func previewBtn(_ sender: UIBarButtonItem) {
+        print(sender)
+    }
+    
     override func viewDidLoad() {
         educationTableView.delegate = self
         educationTableView.dataSource = self
