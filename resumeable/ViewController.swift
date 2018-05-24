@@ -30,15 +30,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         linkLabel.text = "Link: \(profile.link)"
         
         let edItem = EducationItem(schoolName: "The University of Edinburgh", schoolLocation: "Edinburgh, Scotland", degree: "BEng", major: "Electronics and Software Engineering", GPA: 4.0, startDate: "Sep 2014", endDate: "May 2018")
+        let edItem2 = EducationItem(schoolName: "The University of Texas at Austin", schoolLocation: "Austin, TX", degree: "BEng", major: "Electrical and Computer Engineering", GPA: 3.5, startDate: "Aug 2016", endDate: "May 2017")
         profile.addEducationItem(item: edItem)
-        profile.addEducationItem(item: edItem)
-        profile.addEducationItem(item: edItem)
-        profile.addEducationItem(item: edItem)
-        profile.addEducationItem(item: edItem)
-        profile.addEducationItem(item: edItem)
-        profile.addEducationItem(item: edItem)
-        profile.addEducationItem(item: edItem)
-        profile.addEducationItem(item: edItem)
+        profile.addEducationItem(item: edItem2)
         educationTableViewHeightConstraint.constant = CGFloat(70 * profile.educationItems.count)
     }
     

@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="resumeable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1250"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rjM-tU-gd7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1250"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFJ-eh-2Vu">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1250"/>
@@ -177,18 +177,27 @@
                                     <constraint firstItem="cFJ-eh-2Vu" firstAttribute="leading" secondItem="rjM-tU-gd7" secondAttribute="leading" id="xz2-DG-vGb"/>
                                 </constraints>
                             </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xae-R8-ihS">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem width="300" style="plain" systemItem="fixedSpace" id="vQm-fY-t3g"/>
+                                    <barButtonItem title="Preview" id="Pw1-cn-uqO"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Xae-R8-ihS" secondAttribute="bottom" id="4P2-G6-UDg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rjM-tU-gd7" secondAttribute="bottom" id="5Zd-Wp-HLf"/>
-                            <constraint firstItem="rjM-tU-gd7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CD5-Xd-hcY"/>
+                            <constraint firstItem="Xae-R8-ihS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="C3z-zQ-g1Y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rjM-tU-gd7" secondAttribute="trailing" id="CMo-TZ-0J6"/>
+                            <constraint firstItem="rjM-tU-gd7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" symbolic="YES" id="htS-yO-wsE"/>
+                            <constraint firstItem="Xae-R8-ihS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pn9-TP-3Nl"/>
                             <constraint firstItem="rjM-tU-gd7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qvw-lD-EWU"/>
                             <constraint firstItem="cFJ-eh-2Vu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="yvN-G2-6Fc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1250"/>
                     <connections>
                         <outlet property="educationTableView" destination="kRM-vA-vGl" id="xUF-d1-hSb"/>
                         <outlet property="educationTableViewHeightConstraint" destination="wWA-R3-6dm" id="lJ8-Pv-a0R"/>
