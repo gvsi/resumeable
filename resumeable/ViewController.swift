@@ -48,6 +48,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         profile.addExperienceItem(item: expItem)
         profile.addExperienceItem(item: expItem2)
         experienceTableViewHeightConstraint.constant = CGFloat(70 * profile.experienceItems.count)
+        
+        self.hidesBottomBarWhenPushed = true
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,5 +95,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         
         return UITableViewCell() // Return Dummy Cell if table view not found
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! EditProfileViewController
+        dest.profile = self.profile
     }
 }
