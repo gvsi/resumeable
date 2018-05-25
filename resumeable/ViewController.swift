@@ -60,8 +60,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         profile.addExperienceItem(item: expItem2)
         //Recompute constraints after finish adding all the items in table
         experienceTableViewHeightConstraint.constant = CGFloat(70 * profile.experienceItems.count)
-        
-        self.hidesBottomBarWhenPushed = true
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -111,6 +109,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination as! EditProfileViewController
+        dest.hidesBottomBarWhenPushed = true
         dest.profile = self.profile
     }
 }
