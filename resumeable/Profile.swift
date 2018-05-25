@@ -15,7 +15,11 @@ class Profile {
     var location : String
     var link : String
     var educationItems = [EducationItem]()
+    var experienceItems = [ExperienceItem]()
     
+    func addExperienceItem(item : ExperienceItem){
+        experienceItems.append(item)
+    }
     func addEducationItem(item : EducationItem) {
         educationItems.append(item)
     }
