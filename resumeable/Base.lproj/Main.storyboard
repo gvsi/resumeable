@@ -48,6 +48,9 @@
                                                         <state key="normal" title="Edit Profile">
                                                             <color key="titleColor" red="0.29411764709999999" green="0.62745098040000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="ccY-3f-MZS" kind="show" id="Sur-BC-Awi"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -227,14 +230,6 @@
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcs-PB-rUs">
-                                                <rect key="frame" x="321" y="58" width="46" height="29"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                                <connections>
-                                                    <segue destination="ccY-3f-MZS" kind="show" id="Zdz-E4-adP"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.86008320806687555" green="1" blue="0.95666543851694075" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
