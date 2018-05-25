@@ -19,17 +19,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var educationTableView: UITableView!
     @IBOutlet weak var educationTableViewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var editProfileButton: UIButton!
+    
     @IBOutlet weak var experienceTableView: UITableView!
     @IBOutlet weak var experienceTableViewHeightConstraint: NSLayoutConstraint!
     
-
+    
     
     override func viewDidLoad() {
+
+        editProfileButton.backgroundColor = .clear
+        editProfileButton.layer.cornerRadius = 10
+        editProfileButton.layer.borderWidth = 1
+        editProfileButton.layer.borderColor = UIColor(red: 75/255, green: 160/255, blue: 236/255, alpha: 1.0).cgColor
+        
+        
         educationTableView.delegate = self
         educationTableView.dataSource = self
         experienceTableView.delegate = self
         experienceTableView.dataSource = self
         
+        //Add Hard Coded Data into Tables
         nameLabel.text = profile.name
         emailLabel.text = "Email \(profile.email)"
         phoneNumberLabel.text = "Phone number: \(profile.phoneNumber)"
@@ -40,6 +50,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let edItem2 = EducationItem(schoolName: "The University of Texas at Austin", schoolLocation: "Austin, TX", degree: "BEng", major: "Electrical and Computer Engineering", GPA: 3.5, startDate: "Aug 2016", endDate: "May 2017")
         profile.addEducationItem(item: edItem)
         profile.addEducationItem(item: edItem2)
+        //Recompute constraints after finish adding all the items in table
         educationTableViewHeightConstraint.constant = CGFloat(70 * profile.educationItems.count)
         
         
@@ -47,6 +58,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let expItem2 = ExperienceItem(jobTitle: "Hardware Engineer", companyName: "Intel", startDate: "May 2016", endDate: "May 2017", jobLocation: "Penang, Malaysia")
         profile.addExperienceItem(item: expItem)
         profile.addExperienceItem(item: expItem2)
+        //Recompute constraints after finish adding all the items in table
         experienceTableViewHeightConstraint.constant = CGFloat(70 * profile.experienceItems.count)
     }
     
