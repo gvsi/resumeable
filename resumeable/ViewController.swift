@@ -39,13 +39,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         experienceTableView.delegate = self
         experienceTableView.dataSource = self
         
-        //Add Hard Coded Data into Tables
         nameLabel.text = profile.name
         emailLabel.text = "Email \(profile.email)"
         phoneNumberLabel.text = "Phone number: \(profile.phoneNumber)"
         locationLabel.text = "Location: \(profile.location)"
         linkLabel.text = "Link: \(profile.link)"
         
+        //Add Hard Coded Data into Tables
         let edItem = EducationItem(schoolName: "The University of Edinburgh", schoolLocation: "Edinburgh, Scotland", degree: "BEng", major: "Electronics and Software Engineering", GPA: 4.0, startDate: "Sep 2014", endDate: "May 2018")
         let edItem2 = EducationItem(schoolName: "The University of Texas at Austin", schoolLocation: "Austin, TX", degree: "BEng", major: "Electrical and Computer Engineering", GPA: 3.5, startDate: "Aug 2016", endDate: "May 2017")
         profile.addEducationItem(item: edItem)
@@ -63,6 +63,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         self.hidesBottomBarWhenPushed = true
     }
+
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(tableView == self.educationTableView){
@@ -108,7 +109,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return UITableViewCell() // Return Dummy Cell if table view not found
     }
-    
+
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination as! EditProfileViewController
         dest.profile = self.profile
