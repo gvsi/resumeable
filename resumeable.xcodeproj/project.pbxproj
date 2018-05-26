@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		191C087120B967A900705FEB /* EditEducationItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191C087020B967A900705FEB /* EditEducationItemViewController.swift */; };
 		199D2C3120B83EBD00EFF118 /* ExperienceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D2C3020B83EBD00EFF118 /* ExperienceItem.swift */; };
 		199D2C3320B844F600EFF118 /* ExperienceItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D2C3220B844F600EFF118 /* ExperienceItemTableViewCell.swift */; };
 		E854B60520B8671D00637684 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854B60420B8671D00637684 /* EditProfileViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		191C087020B967A900705FEB /* EditEducationItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEducationItemViewController.swift; sourceTree = "<group>"; };
 		199D2C3020B83EBD00EFF118 /* ExperienceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceItem.swift; sourceTree = "<group>"; };
 		199D2C3220B844F600EFF118 /* ExperienceItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceItemTableViewCell.swift; sourceTree = "<group>"; };
 		E854B60420B8671D00637684 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				E85BD18B20B71FB6000C4FAA /* EducationItemTableViewCell.swift */,
 				199D2C3220B844F600EFF118 /* ExperienceItemTableViewCell.swift */,
 				E854B60420B8671D00637684 /* EditProfileViewController.swift */,
+				191C087020B967A900705FEB /* EditEducationItemViewController.swift */,
 			);
 			path = resumeable;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				199D2C3120B83EBD00EFF118 /* ExperienceItem.swift in Sources */,
 				E88E265E20B7086B00111580 /* Profile.swift in Sources */,
 				E88E264B20B7038700111580 /* AppDelegate.swift in Sources */,
+				191C087120B967A900705FEB /* EditEducationItemViewController.swift in Sources */,
 				E85BD18C20B71FB6000C4FAA /* EducationItemTableViewCell.swift in Sources */,
 				199D2C3320B844F600EFF118 /* ExperienceItemTableViewCell.swift in Sources */,
 			);

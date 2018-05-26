@@ -92,7 +92,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 cell.jobTitleLabel.text = item.jobTitle
                 cell.startEndDateLabel.text = "\(item.startDate) - \(item.endDate) "
                 
-                // Company Name with gray Location
+                // Company Name with gray colored Location
                 let attrs1 = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 12)]
                 let attributedString1 = NSMutableAttributedString(string:"\(item.companyName) -", attributes:attrs1)
                 let attrs2 = [NSAttributedStringKey.font :
@@ -110,8 +110,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! EditProfileViewController
-        dest.hidesBottomBarWhenPushed = true
-        dest.profile = self.profile
+        if (segue.identifier == "editProfileSegue") {
+            if let dest = segue.destination as? EditProfileViewController {
+                dest.hidesBottomBarWhenPushed = true
+                dest.profile = self.profile
+                
+            }
+        } else if ( segue.identifier == "editEducationItemSegue") {
+            if let dest = segue.destination as? EditEducationItemViewController {
+                let indexPath = educationTableView.indexPathForSelectedRow?.row
+                dest.educationItem = self.profile.educationItems[indexPath!]
+            }
+        }
     }
 }
