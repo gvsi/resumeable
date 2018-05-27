@@ -39,13 +39,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         experienceTableView.delegate = self
         experienceTableView.dataSource = self
         
-        //Add Hard Coded Data into Tables
         nameLabel.text = profile.name
         emailLabel.text = "Email \(profile.email)"
         phoneNumberLabel.text = "Phone number: \(profile.phoneNumber)"
         locationLabel.text = "Location: \(profile.location)"
         linkLabel.text = "Link: \(profile.link)"
         
+        //Add Hard Coded Data into Tables
         let edItem = EducationItem(schoolName: "The University of Edinburgh", schoolLocation: "Edinburgh, Scotland", degree: "BEng", major: "Electronics and Software Engineering", GPA: 4.0, startDate: "Sep 2014", endDate: "May 2018")
         let edItem2 = EducationItem(schoolName: "The University of Texas at Austin", schoolLocation: "Austin, TX", degree: "BEng", major: "Electrical and Computer Engineering", GPA: 3.5, startDate: "Aug 2016", endDate: "May 2017")
         profile.addEducationItem(item: edItem)
@@ -61,6 +61,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //Recompute constraints after finish adding all the items in table
         experienceTableViewHeightConstraint.constant = CGFloat(70 * profile.experienceItems.count)
     }
+
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(tableView == self.educationTableView){
@@ -91,7 +92,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 cell.jobTitleLabel.text = item.jobTitle
                 cell.startEndDateLabel.text = "\(item.startDate) - \(item.endDate) "
                 
-                // Company Name with gray Location
+                // Company Name with gray colored Location
                 let attrs1 = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 12)]
                 let attributedString1 = NSMutableAttributedString(string:"\(item.companyName) -", attributes:attrs1)
                 let attrs2 = [NSAttributedStringKey.font :
@@ -106,10 +107,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return UITableViewCell() // Return Dummy Cell if table view not found
     }
-    
+
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! EditProfileViewController
-        dest.hidesBottomBarWhenPushed = true
-        dest.profile = self.profile
+        if (segue.identifier == "editProfileSegue") {
+            if let dest = segue.destination as? EditProfileViewController {
+                dest.hidesBottomBarWhenPushed = true
+                dest.profile = self.profile
+                
+            }
+        } else if ( segue.identifier == "editEducationItemSegue") {
+            if let dest = segue.destination as? EditEducationItemViewController {
+                let indexPath = educationTableView.indexPathForSelectedRow?.row
+                dest.educationItem = self.profile.educationItems[indexPath!]
+            }
+        }
     }
 }
