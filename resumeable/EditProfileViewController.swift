@@ -20,12 +20,35 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 4
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 55
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell() // Return Dummy Cell if table view not found
+        let cell = editProfileTableView.dequeueReusableCell(withIdentifier: "editProfileItemCell") as! EditProfileItemTableViewCell
+        
+        switch indexPath.row {
+        case 0:
+            cell.rowLabel.text = "Name"
+            cell.rowTextField.text = profile?.name ?? ""
+            cell.rowTextField.placeholder = "John Smith"
+        case 1:
+            cell.rowLabel.text = "Phone number"
+            cell.rowTextField.text = profile?.phoneNumber ?? ""
+            cell.rowTextField.placeholder = "(123)456-7890"
+        case 2:
+            cell.rowLabel.text = "Location"
+            cell.rowTextField.text = profile?.location ?? ""
+            cell.rowTextField.placeholder = "San Francisco, CA"
+        case 3:
+            cell.rowLabel.text = "Website"
+            cell.rowTextField.text = profile?.link ?? ""
+            cell.rowTextField.placeholder = "www.johnsmith.com"
+        default:
+            print("Error: tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)")
+        }
+
+        return cell
     }}
