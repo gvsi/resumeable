@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +13,7 @@
         <!--Profile-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Profile" id="BYZ-38-t0r" customClass="ViewController" customModule="resumeable" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Profile" id="BYZ-38-t0r" customClass="ProfileViewController" customModule="resumeable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -306,30 +307,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UMv-iT-bKZ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <items>
-                                    <navigationItem id="zFu-FM-wAe">
-                                        <barButtonItem key="backBarButtonItem" title=" " id="N1J-dx-UO6"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" id="p2Y-aG-KxV"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ILk-Mv-eaE">
-                                <rect key="frame" x="10" y="10" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem id="qqu-WN-tXh">
-                                        <barButtonItem key="backBarButtonItem" title=" " id="lyn-tJ-tnd"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="puI-fy-GMf">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="editProfileItemCell" rowHeight="55" id="yWz-uD-xWF" customClass="EditProfileItemTableViewCell" customModule="resumeable" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="editProfileItemCell" rowHeight="55" id="yWz-uD-xWF" customClass="EditProfileItemTableViewCell" customModule="resumeable" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yWz-uD-xWF" id="z3K-gC-S0k">
@@ -337,7 +320,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John Smith" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y7a-lr-CT4">
-                                                    <rect key="frame" x="120" y="11" width="240" height="30"/>
+                                                    <rect key="frame" x="120" y="11" width="94" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -365,18 +348,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bo-5s-ngk">
-                                <rect key="frame" x="313" y="26" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="UMv-iT-bKZ" firstAttribute="leading" secondItem="fKp-32-IvU" secondAttribute="leading" id="A7g-ww-CVb"/>
-                            <constraint firstItem="UMv-iT-bKZ" firstAttribute="top" secondItem="fKp-32-IvU" secondAttribute="top" id="bJ7-kD-Di8"/>
-                            <constraint firstAttribute="trailing" secondItem="UMv-iT-bKZ" secondAttribute="trailing" id="cGb-EQ-TqI"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nq2-vB-2Sm"/>
                     </view>
                     <connections>

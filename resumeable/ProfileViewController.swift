@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     lazy var profile = Profile(name: "Wei Tat", email: "weitat96@live.com", phoneNumber: "17823642", location: "Edinburgh", link: "linkedin.com")
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -27,23 +27,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     override func viewDidLoad() {
-
-        editProfileButton.backgroundColor = .clear
-        editProfileButton.layer.cornerRadius = 10
-        editProfileButton.layer.borderWidth = 1
-        editProfileButton.layer.borderColor = UIColor(red: 75/255, green: 160/255, blue: 236/255, alpha: 1.0).cgColor
-        
-        
         educationTableView.delegate = self
         educationTableView.dataSource = self
         experienceTableView.delegate = self
         experienceTableView.dataSource = self
         
-        nameLabel.text = profile.name
-        emailLabel.text = "Email \(profile.email)"
-        phoneNumberLabel.text = "Phone number: \(profile.phoneNumber)"
-        locationLabel.text = "Location: \(profile.location)"
-        linkLabel.text = "Link: \(profile.link)"
+        reloadProfile()
         
         //Add Hard Coded Data into Tables
         let edItem = EducationItem(schoolName: "The University of Edinburgh", schoolLocation: "Edinburgh, Scotland", degree: "BEng", major: "Electronics and Software Engineering", GPA: 4.0, startDate: "Sep 2014", endDate: "May 2018")
@@ -60,6 +49,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         profile.addExperienceItem(item: expItem2)
         //Recompute constraints after finish adding all the items in table
         experienceTableViewHeightConstraint.constant = CGFloat(70 * profile.experienceItems.count)
+        
+        editProfileButton.backgroundColor = .clear
+        editProfileButton.layer.cornerRadius = 10
+        editProfileButton.layer.borderWidth = 1
+        editProfileButton.layer.borderColor = UIColor(red: 75/255, green: 160/255, blue: 236/255, alpha: 1.0).cgColor
     }
 
     
@@ -107,14 +101,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return UITableViewCell() // Return Dummy Cell if table view not found
     }
-
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "editProfileSegue") {
             if let dest = segue.destination as? EditProfileViewController {
                 dest.hidesBottomBarWhenPushed = true
                 dest.profile = self.profile
-                
+                dest.profileViewController = self
             }
         } else if ( segue.identifier == "editEducationItemSegue") {
             if let dest = segue.destination as? EditEducationItemViewController {
@@ -122,5 +115,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 dest.educationItem = self.profile.educationItems[indexPath!]
             }
         }
+    }
+    
+    func reloadProfile() {
+        nameLabel.text = profile.name
+        emailLabel.text = "Email \(profile.email)"
+        phoneNumberLabel.text = "Phone number: \(profile.phoneNumber)"
+        locationLabel.text = "Location: \(profile.location)"
+        linkLabel.text = "Link: \(profile.link)"
     }
 }

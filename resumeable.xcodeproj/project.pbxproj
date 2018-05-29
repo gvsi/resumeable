@@ -14,7 +14,7 @@
 		E854B60720B874C700637684 /* EditProfileItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854B60620B874C700637684 /* EditProfileItemTableViewCell.swift */; };
 		E85BD18C20B71FB6000C4FAA /* EducationItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85BD18B20B71FB6000C4FAA /* EducationItemTableViewCell.swift */; };
 		E88E264B20B7038700111580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88E264A20B7038700111580 /* AppDelegate.swift */; };
-		E88E264D20B7038700111580 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88E264C20B7038700111580 /* ViewController.swift */; };
+		E88E264D20B7038700111580 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88E264C20B7038700111580 /* ProfileViewController.swift */; };
 		E88E265020B7038700111580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E88E264E20B7038700111580 /* Main.storyboard */; };
 		E88E265220B7038800111580 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E88E265120B7038800111580 /* Assets.xcassets */; };
 		E88E265520B7038800111580 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E88E265320B7038800111580 /* LaunchScreen.storyboard */; };
@@ -31,7 +31,7 @@
 		E85BD18B20B71FB6000C4FAA /* EducationItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationItemTableViewCell.swift; sourceTree = "<group>"; };
 		E88E264720B7038700111580 /* resumeable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = resumeable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E88E264A20B7038700111580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E88E264C20B7038700111580 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E88E264C20B7038700111580 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E88E264F20B7038700111580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E88E265120B7038800111580 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E88E265420B7038800111580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 				E88E265F20B70C6F00111580 /* EducationItem.swift */,
 				199D2C3020B83EBD00EFF118 /* ExperienceItem.swift */,
 				E88E265C20B703B400111580 /* Supporting Files */,
-				E88E264C20B7038700111580 /* ViewController.swift */,
+				E88E264C20B7038700111580 /* ProfileViewController.swift */,
 				E88E264E20B7038700111580 /* Main.storyboard */,
 				E854B60620B874C700637684 /* EditProfileItemTableViewCell.swift */,
 				E88E265620B7038800111580 /* Info.plist */,
@@ -168,7 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E854B60520B8671D00637684 /* EditProfileViewController.swift in Sources */,
-				E88E264D20B7038700111580 /* ViewController.swift in Sources */,
+				E88E264D20B7038700111580 /* ProfileViewController.swift in Sources */,
 				E854B60720B874C700637684 /* EditProfileItemTableViewCell.swift in Sources */,
 				E88E266020B70C6F00111580 /* EducationItem.swift in Sources */,
 				199D2C3120B83EBD00EFF118 /* ExperienceItem.swift in Sources */,

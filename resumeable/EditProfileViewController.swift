@@ -10,13 +10,27 @@ import UIKit
 
 class EditProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var profile : Profile?
-    
+    var profileViewController : ProfileViewController?
     @IBOutlet weak var editProfileTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         editProfileTableView.delegate = self
         editProfileTableView.dataSource = self
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveProfile))
+    }
+    
+    @IBAction func saveProfile(_ sender: UIBarButtonItem) {
+        if let parent = profileViewController {
+            parent.profile.name = (editProfileTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! EditProfileItemTableViewCell).rowTextField.text!
+            parent.profile.phoneNumber = (editProfileTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! EditProfileItemTableViewCell).rowTextField.text!
+            parent.profile.location = (editProfileTableView.cellForRow(at: IndexPath(row: 2, section: 0)) as! EditProfileItemTableViewCell).rowTextField.text!
+            parent.profile.link = (editProfileTableView.cellForRow(at: IndexPath(row: 3, section: 0)) as! EditProfileItemTableViewCell).rowTextField.text!
+            
+            parent.reloadProfile()
+            
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,4 +65,5 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         }
 
         return cell
-    }}
+    }
+}
